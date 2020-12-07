@@ -1,0 +1,14 @@
+Insert Into [ANBTO] ([COMPANY],[CREATOR],[USR_GROUP],[CREATE_DATE],[MODIFIER]
+      ,[MODI_DATE],[FLAG],
+	  [TO002],[TO003],[TO004],[TO005])
+	  Values(
+	  'WFTW05', 'ITADMIN', '110', 
+	  '20201005', 	--日期
+	  '',
+	  '',
+	  1,
+	  '20200744',	--工號
+	  '林詳益',		--姓名
+	  '20200744',	--AD帳號
+	  'N'
+	  )

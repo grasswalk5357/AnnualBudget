@@ -1,0 +1,23 @@
+INSERT INTO [dbo].[ANBTA] ([COMPANY]
+      ,[CREATOR]
+      ,[USR_GROUP]
+      ,[CREATE_DATE]
+      ,[MODIFIER]
+      ,[MODI_DATE]
+      ,[FLAG]     
+      ,[TA002]
+      ,[TA003]
+      ,[TA004])
+	  values (
+	  'WFTW05'
+      ,'ITADMIN'
+      ,'110'
+      ,'20200917'
+      ,''
+      ,''
+      ,1
+     
+      ,'ABM008'
+      ,'部門編制表'
+      ,''
+	  )

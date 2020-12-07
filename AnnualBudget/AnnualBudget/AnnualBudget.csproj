@@ -1,0 +1,314 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CDFCFC72-1A62-4C6E-AA7F-05090F4542D7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>AnnualBudget</RootNamespace>
+    <AssemblyName>AnnualBudget</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>3925433-budget-money-stocks-icon_111559.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.8.6\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="EncDec_Lib">
+      <HintPath>..\..\EncDec_Lib\EncDec_Lib\bin\Release\EncDec_Lib.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=1.2.0.246, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.1.2.0\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=2.5.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.1\lib\net45\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.5.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.1\lib\net45\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.5.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.1\lib\net45\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.5.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.5.1\lib\net45\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BOs\ANBTB.cs" />
+    <Compile Include="BOs\ANBTN.cs" />
+    <Compile Include="BOs\ANBTC.cs" />
+    <Compile Include="BOs\ANBTG.cs" />
+    <Compile Include="BOs\ANBTH.cs" />
+    <Compile Include="BOs\ANBTF.cs" />
+    <Compile Include="BOs\ANBTE.cs" />
+    <Compile Include="BOs\ANBTD.cs" />
+    <Compile Include="BOs\ANBTI.cs" />
+    <Compile Include="BOs\ANBTJ.cs" />
+    <Compile Include="BOs\ANBTK.cs" />
+    <Compile Include="BOs\ANBTM.cs" />
+    <Compile Include="BOs\ANBTO.cs" />
+    <Compile Include="BOs\BizTrip.cs" />
+    <Compile Include="BOs\CapEx.cs" />
+    <Compile Include="BOs\EmployeeTraining.cs" />
+    <Compile Include="BOs\ERP_Common.cs" />
+    <Compile Include="BOs\HumanBudget.cs" />
+    <Compile Include="BOs\MonthlyData.cs" />
+    <Compile Include="BOs\UserInfo.cs" />
+    <Compile Include="Form_Accounting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Accounting.Designer.cs">
+      <DependentUpon>Form_Accounting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_AuthMgmt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_AuthMgmt.Designer.cs">
+      <DependentUpon>Form_AuthMgmt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Dept_Tmpl_Ref.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Dept_Tmpl_Ref.Designer.cs">
+      <DependentUpon>Form_Dept_Tmpl_Ref.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_FeeFillIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_FeeFillIn.Designer.cs">
+      <DependentUpon>Form_FeeFillIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_FeePreFillIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_FeePreFillIn.Designer.cs">
+      <DependentUpon>Form_FeePreFillIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_forDept5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_forDept5.Designer.cs">
+      <DependentUpon>Form_forDept5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Login.cs" />
+    <Compile Include="Form_Login.Designer.cs">
+      <DependentUpon>Form_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Main.Designer.cs">
+      <DependentUpon>Form_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Rate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Rate.Designer.cs">
+      <DependentUpon>Form_Rate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ANBTB_Model.cs" />
+    <Compile Include="Model\ANBTK_Model.cs" />
+    <Compile Include="Model\ANBTI_Model.cs" />
+    <Compile Include="Model\ANBTH_Model.cs" />
+    <Compile Include="Model\ANBTG_Model.cs" />
+    <Compile Include="Model\ANBTF_Model.cs" />
+    <Compile Include="Model\ANBTE_Model.cs" />
+    <Compile Include="Model\ANBTD_Model.cs" />
+    <Compile Include="Model\ANBTC_Model.cs" />
+    <Compile Include="Model\ANBTJ_Model.cs" />
+    <Compile Include="Model\ANBTM_Model.cs" />
+    <Compile Include="Model\ANBTN_Model.cs" />
+    <Compile Include="Model\ANBTO_Model.cs" />
+    <Compile Include="Model\Auth_Model.cs" />
+    <Compile Include="Model\Common_Model.cs" />
+    <Compile Include="Model\File_Model.cs" />
+    <Compile Include="Model\Tmpl_Model.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form_Accounting.resx">
+      <DependentUpon>Form_Accounting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_AuthMgmt.resx">
+      <DependentUpon>Form_AuthMgmt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Dept_Tmpl_Ref.resx">
+      <DependentUpon>Form_Dept_Tmpl_Ref.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_FeeFillIn.resx">
+      <DependentUpon>Form_FeeFillIn.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_FeePreFillIn.resx">
+      <DependentUpon>Form_FeePreFillIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_forDept5.resx">
+      <DependentUpon>Form_forDept5.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Login.resx">
+      <DependentUpon>Form_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Main.resx">
+      <DependentUpon>Form_Main.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Rate.resx">
+      <DependentUpon>Form_Rate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Templates\A.xlsx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Microsoft_Office_2003_Excel_22574.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="3925433-budget-money-stocks-icon_111559.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxSHDocVw">
+      <Guid>{EAB22AC0-30C1-11CF-A7EB-0000C05BAE0B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Office">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>6</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="SHDocVw">
+      <Guid>{EAB22AC0-30C1-11CF-A7EB-0000C05BAE0B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

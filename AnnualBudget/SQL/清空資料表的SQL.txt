@@ -1,0 +1,8 @@
+TRUNCATE TAble ANBTN	--組織編制表
+  TRUNCATE TAble ANBTC	--人力需求預算表
+  TRUNCATE TAble ANBTD	--教育訓練計畫表
+  TRUNCATE TAble ANBTE	--出差計劃表
+  TRUNCATE TAble ANBTF	--資本支出預算表
+  TRUNCATE TAble ANBTG	--研發專案彙總表-單頭
+  TRUNCATE TAble ANBTH	--研發專案彙總表-單身
+  TRUNCATE TAble ANBTI	--預算總表
