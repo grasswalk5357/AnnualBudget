@@ -26,9 +26,14 @@ namespace AnnualBudget.Model
 			bool result = true;
 			StringBuilder SQL_1 = new StringBuilder();
 			StringBuilder SQL_2 = new StringBuilder();
-			ConnectionStringSettings connString = ConfigurationManager.ConnectionStrings["AB_ConnString"];
+			EncDec_Lib.EncDec Cryp = new EncDec_Lib.EncDec();
+			SqlConnectionStringBuilder sqlsb;
 
-			using (SqlConnection conn = new SqlConnection(connString.ToString()))
+			sqlsb = new SqlConnectionStringBuilder(ConfigurationManager.ConnectionStrings["AB_ConnString"].ConnectionString);
+
+			sqlsb.Password = Cryp.DESDecrypt(sqlsb.Password);   // 解密
+
+			using (SqlConnection conn = new SqlConnection(sqlsb.ConnectionString))
 			{
 				if (conn.State != ConnectionState.Open)
 					conn.Open();
@@ -125,11 +130,17 @@ namespace AnnualBudget.Model
 			Dictionary<string, Object> keyValues = new Dictionary<string, object>();
 			StringBuilder SQL = new StringBuilder();
 			SqlDataAdapter adapter;
-			DataTable dt = new DataTable();
-			ConnectionStringSettings connString = ConfigurationManager.ConnectionStrings["AB_ConnString"];
+			DataTable dt = new DataTable();			
 
 			SqlCommand command = null;
-			using (SqlConnection conn = new SqlConnection(connString.ToString()))
+			EncDec_Lib.EncDec Cryp = new EncDec_Lib.EncDec();
+			SqlConnectionStringBuilder sqlsb;
+
+			sqlsb = new SqlConnectionStringBuilder(ConfigurationManager.ConnectionStrings["AB_ConnString"].ConnectionString);
+
+			sqlsb.Password = Cryp.DESDecrypt(sqlsb.Password);   // 解密
+
+			using (SqlConnection conn = new SqlConnection(sqlsb.ConnectionString))
 			{
 
 				

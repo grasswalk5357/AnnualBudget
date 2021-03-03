@@ -1,0 +1,17 @@
+2021-02-24 14:14:02,136 [1] DEBUG AnnualBudget.Form_Main - 主程式載入中...
+2021-02-24 14:14:07,282 [1] DEBUG AnnualBudget.Form_Login - 使用者登入中...
+2021-02-24 14:14:10,667 [1] DEBUG AnnualBudget.Form_Login - 使用ANBTO的資料去ERP找部門資料：20150509
+2021-02-24 14:14:10,718 [1] DEBUG AnnualBudget.Form_Login - 登入成功，登入帳號：20200301，部門：110
+2021-02-24 14:14:25,645 [1] DEBUG AnnualBudget.Model.ANBTI_Model - 執行Set_dgvSummary
+2021-02-24 14:14:25,662 [1] DEBUG AnnualBudget.Form_Main - 填寫部門代號為：100的年度預算表
+2021-02-24 14:14:25,967 [1] DEBUG AnnualBudget.Form_Main - 主程式載入完畢！
+2021-02-24 14:14:48,461 [1] DEBUG AnnualBudget.Model.ANBTI_Model - 執行Set_dgvSummary
+2021-02-24 14:14:48,466 [1] DEBUG AnnualBudget.Form_Main - 填寫部門代號為：830的年度預算表
+2021-02-24 14:14:48,561 [1] DEBUG AnnualBudget.Form_Main - 切換到部門830
+2021-02-24 14:15:47,057 [1] DEBUG AnnualBudget.Form_Main - 主程式載入中...
+2021-02-24 14:15:56,472 [1] DEBUG AnnualBudget.Form_Login - 使用者登入中...
+2021-02-24 14:15:59,087 [1] DEBUG AnnualBudget.Form_Login - 使用ANBTO的資料去ERP找部門資料：20200301
+2021-02-24 14:15:59,116 [1] DEBUG AnnualBudget.Form_Login - 登入成功，登入帳號：20200301，部門：831
+2021-02-24 14:16:00,750 [1] DEBUG AnnualBudget.Model.ANBTI_Model - 執行Set_dgvSummary
+2021-02-24 14:16:00,759 [1] DEBUG AnnualBudget.Form_Main - 填寫部門代號為：830的年度預算表
+2021-02-24 14:16:00,830 [1] DEBUG AnnualBudget.Form_Main - 主程式載入完畢！

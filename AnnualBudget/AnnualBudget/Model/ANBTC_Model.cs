@@ -54,11 +54,11 @@ namespace AnnualBudget.Model
 												"UPDATE dbo.ANBTC SET FLAG = FLAG + 1, MODIFIER = '{1}', MODI_DATE = '{2}', " +
 												"TC005 = '{3}', TC006 = '{4}', TC007 = '{5}', TC008 = {6}, TC009 = {7}, " +
 												"TC010 = {8}, TC011 = {9}, TC012 = {10}, TC013 = {11}, TC014 = '{12}', " +
-												"TC015 = '{13}', TC016 = '{14}' " +
-												"WHERE TC000 = {15} ELSE ",
+												"TC015 = '{13}', TC016 = '{14}', TC004 = '{15}' " +
+												"WHERE TC000 = {0} ELSE ",
 												myObj.Id, myObj.Modifier, myObj.Modi_date, myObj.JobTitle, myObj.Rank, 
 												myObj.JobContent, myObj.ActNum, myObj.EstNum, myObj.StartMonth, myObj.DiffNum, 
-												myObj.Salary, myObj.TotalChangeSalary, myObj.Reason, myObj.IsDelete, myObj.RefCln, myObj.Id);
+												myObj.Salary, myObj.TotalChangeSalary, myObj.Reason, myObj.IsDelete, myObj.RefCln, myObj.Role);
 
 
 						SQL_2.AppendFormat("INSERT INTO dbo.ANBTC " +

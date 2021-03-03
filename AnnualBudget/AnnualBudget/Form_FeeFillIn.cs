@@ -160,7 +160,7 @@ namespace AnnualBudget
                 //dgv_Summary = gForm_Main.Set_dgvSummary(cbx_Depts.Text, dgv_Summary, gTmplTable);
 
                 // 將樣版套用到DataGridView上，設定總表的列的RowHeaderCell
-                dgv_Summary = ANBTI_Model.Set_dgvSummary(gTmplTable, dgv_Summary, true, gUserInfo.DeptNo);
+                dgv_Summary = ANBTI_Model.Set_dgvSummary(gTmplTable, dgv_Summary, true, gUserInfo.DeptNo, false);
 
                 DataRow[] rows = gDeptsTable.Select(whereStr);
 

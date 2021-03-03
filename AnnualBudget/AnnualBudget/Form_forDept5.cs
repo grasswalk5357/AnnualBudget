@@ -43,7 +43,7 @@ namespace AnnualBudget
 
             if (table != null && table.Rows.Count > 0)
             {
-                dgv_Summary = ANBTI_Model.Set_dgvSummary(table, dgv_Summary, false, gDept);
+                dgv_Summary = ANBTI_Model.Set_dgvSummary(table, dgv_Summary, false, gDept, true);
 
                 for (int i = 0; i < table.Rows.Count; i++)
                 {
@@ -170,8 +170,8 @@ namespace AnnualBudget
                 //File_Model.WriteToExcel(gMainDeptNo, gMainDeptName, gYear, "Templates_5.xlsx", dgvs, keyValues, summaryList);
 
                 _log.Debug("匯出預算總表...");
-                ISheet sheet4 = workbook.GetSheetAt(4); // 預算總表
-                sheet4 = File_Model.WriteSummaryToExcel(departNo, departName, gDept, gYear, sheet4, dgvs[0], summaryList);
+                ISheet sheet = workbook.GetSheetAt(5); // 預算總表
+                sheet = File_Model.WriteSummaryToExcel(departNo, departName, gDept, gYear, sheet, dgvs[0], summaryList);
 
 
                 SaveFileDialog dlg = new SaveFileDialog();

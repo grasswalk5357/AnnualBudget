@@ -718,9 +718,12 @@ namespace AnnualBudget
 
 
             if (result1 == true && result2 == true && result3 == true)
-            {                
+            {
+                if (gPRJ_Index == -1)   // 若為初始值-1                                    
+                    dgv_PRJ_Content = ANBTH_Model.SetDGV(dgv_PRJ, dgv_PRJ_Content, keyValues);                
 
-                SavePRJ_Data(dgv_PRJ.SelectedCells[0].RowIndex);    // 先儲存最後一筆停留的研發專案資料
+
+                SavePRJ_Data(rowIndex);    // 先儲存最後一筆停留的研發專案資料
 
 
                 bool isAllDataSaved = true;
@@ -1271,9 +1274,9 @@ namespace AnnualBudget
 
 
             if (RD_Depts.Contains(gMainDeptNo)) // 900新創、610開發
-                allTableState = new bool[] { isANBTC_Saved, isANBTD_Saved, isANBTE_Saved, isANBTF_Saved, isANBTG_Saved, isANBTI_Saved, isANBTN_Saved };
+                allTableState = new bool[] { isANBTN_Saved, isANBTC_Saved, isANBTD_Saved, isANBTE_Saved, isANBTF_Saved, isANBTG_Saved, isANBTI_Saved };
             else
-                allTableState = new bool[] { isANBTC_Saved, isANBTD_Saved, isANBTE_Saved, isANBTF_Saved, isANBTI_Saved, isANBTN_Saved };
+                allTableState = new bool[] { isANBTN_Saved, isANBTC_Saved, isANBTD_Saved, isANBTE_Saved, isANBTF_Saved, isANBTI_Saved };
 
             // 看看是否每張表都有儲存了
             for (int i = 0; i < allTableState.Count(); i++)
@@ -2141,7 +2144,7 @@ namespace AnnualBudget
                     GetTmplID();    // 取得全域的樣版編號
 
                     //dgv_Summary = Set_dgvSummary(gMainDeptNo, dgv_Summary, gDT_Summary);
-                    dgv_Summary = ANBTI_Model.Set_dgvSummary(gDT_Summary, dgv_Summary, false, gMainDeptNo);
+                    dgv_Summary = ANBTI_Model.Set_dgvSummary(gDT_Summary, dgv_Summary, false, gMainDeptNo, false);
                 }
             
 
@@ -2234,6 +2237,5 @@ namespace AnnualBudget
             isANBTI_Saved = false;  // [預算總表]的儲存狀態
             isANBTN_Saved = false;  // [組織編制表]的儲存狀態
         }
-        
     }
 }

@@ -147,7 +147,9 @@
     <Compile Include="Form_forDept5.Designer.cs">
       <DependentUpon>Form_forDept5.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_Login.cs" />
+    <Compile Include="Form_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form_Login.Designer.cs">
       <DependentUpon>Form_Login.cs</DependentUpon>
     </Compile>

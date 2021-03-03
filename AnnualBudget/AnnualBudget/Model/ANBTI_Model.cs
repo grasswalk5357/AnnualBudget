@@ -386,7 +386,7 @@ namespace AnnualBudget.Model
 						"SUM(TI014) AS TI014, SUM(TI015) AS TI015, SUM(TI016) AS TI016, SUM(TI017) AS TI017, SUM(TI018) AS TI018, " +
 						"SUM(TI019) AS TI019, SUM(TI020) AS TI020, SUM(TI021) AS TI021, SUM(TI022) AS TI022 " +
 						"FROM dbo.ANBTI " +
-						"WHERE TI002 like '5%' " +
+						"WHERE TI002 like '51%' " +
 						//"AND TI008 <> '總計' " +
 						"AND TI003 = '{0}' " +
 						"GROUP BY TI003, TI004, TI006, TI007, TI008, TI009 " +
@@ -422,7 +422,7 @@ namespace AnnualBudget.Model
 			try
 			{
 				if ((dgv.Rows.Count != table.Rows.Count) && isDeptAccounting == false)
-					dgv = Set_dgvSummary(table, dgv, isDeptAccounting, Dept);	// 設定總表的RowHeaderCell
+					dgv = Set_dgvSummary(table, dgv, isDeptAccounting, Dept, false);	// 設定總表的RowHeaderCell
 
 
 				if (list != null && list.Count > 0)
@@ -517,8 +517,11 @@ namespace AnnualBudget.Model
 		/// </summary>
 		/// <param name="dt">包含樣版的DataTable</param>
 		/// <param name="dgv_Summary">準備套用的目標DataGridView</param>
-		/// <returns></returns>
-		public static DataGridView Set_dgvSummary(DataTable dt, DataGridView dgv_Summary, bool isDeptAccounting, string Dept)
+		/// <param name="isDeptAccounting">登入人員是否是財會部人員</param>
+		/// <param name="Dept">登入人員部門</param>
+		/// <param name="isSummary">是否是執行510匯總表功能</param>
+		/// <returns></returns>		
+		public static DataGridView Set_dgvSummary(DataTable dt, DataGridView dgv_Summary, bool isDeptAccounting, string Dept, bool isSummary)
 		{
 			string[] DeptsForHideSpecRow = new string[]{ "510", "511", "513", "520" ,"710"};
 
@@ -555,11 +558,12 @@ namespace AnnualBudget.Model
 					if (DeptsForHideSpecRow.Contains(Dept) && SpecRow.Contains(c3))
 						dgv_Summary.Rows[i].Visible = false;
 
-
-					// 將需要預先填上的費用(水電、網路、瓦斯等)，加上Tag
-					if (dt.Rows[i]["TL012"] != null && !String.IsNullOrEmpty(dt.Rows[i]["TL012"].ToString())) { 
-						dgv_Summary.Rows[i].Tag = dt.Rows[i]["TL012"].ToString();
-						dgv_Summary.Rows[i].ReadOnly = true;
+					if (isSummary == false) { 
+						// 將需要預先填上的費用(水電、網路、瓦斯等)，加上Tag
+						if (dt.Rows[i]["TL012"] != null && !String.IsNullOrEmpty(dt.Rows[i]["TL012"].ToString())) { 
+							dgv_Summary.Rows[i].Tag = dt.Rows[i]["TL012"].ToString();
+							dgv_Summary.Rows[i].ReadOnly = true;
+						}
 					}
 
 				}
